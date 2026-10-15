@@ -1,0 +1,8 @@
+services:
+  vefa:
+    build: .
+    restart: unless-stopped
+    ports: ["3000:3000"]
+    volumes: ["vefa-data:/data"]
+volumes:
+  vefa-data:

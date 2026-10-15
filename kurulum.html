@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1b1a38">
+<meta name="robots" content="noindex">
+<title>Vefa Auto · Kurulum</title>
+<link rel="icon" href="/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root{--ink:#fff;--mut:#cfc8ea;--line:rgba(255,255,255,.16);--ok:#5be3a8;--warn:#ffc46b;--bad:#ff8fa3;--grad:linear-gradient(100deg,#FF9677,#F54768)}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%}
+body{font:16px/1.5 "Plus Jakarta Sans",system-ui,sans-serif;color:var(--ink);background:radial-gradient(900px 600px at 12% 8%,#974063aa,transparent 60%),radial-gradient(800px 600px at 92% 92%,#F5476855,transparent 60%),#1b1a38;background-attachment:fixed;display:grid;place-items:center;padding:20px 14px calc(20px + env(safe-area-inset-bottom,0px))}
+.wrap{width:100%;max-width:560px}
+.top{text-align:center;margin-bottom:14px}
+.top img{width:150px;max-width:50%;filter:drop-shadow(0 8px 18px rgba(0,0,0,.45))}
+.dots{display:flex;gap:7px;justify-content:center;margin:6px 0 14px}
+.dots i{width:30px;height:5px;border-radius:9px;background:rgba(255,255,255,.18);transition:.3s}
+.dots i.on{background:var(--grad);width:44px}.dots i.done{background:#ffffff88}
+.card{background:rgba(255,255,255,.07);border:1px solid var(--line);border-radius:26px;padding:26px 22px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 30px 60px -20px rgba(0,0,0,.6)}
+.step{display:none;animation:in .4s cubic-bezier(.3,1.3,.5,1)}.step.on{display:block}
+@keyframes in{from{opacity:0;transform:translateY(14px)}}
+h1{font:700 24px Sora,system-ui,sans-serif;margin:0 0 6px}p{margin:0 0 14px;color:var(--mut);font-size:14.5px}
+label{display:block;font-size:12.5px;font-weight:700;color:var(--mut);margin:14px 0 6px}
+input[type=text],input[type=password],input[type=tel]{width:100%;font:inherit;font-size:16px;color:#fff;background:rgba(0,0,0,.28);border:1px solid var(--line);border-radius:14px;padding:13px 14px;outline:0}
+input:focus{border-color:#FF9677;box-shadow:0 0 0 3px #ff967733}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:480px){.row2{grid-template-columns:1fr}}
+.btns{display:flex;gap:10px;margin-top:22px}
+button{font:700 16px "Plus Jakarta Sans",system-ui,sans-serif;border:0;border-radius:14px;padding:14px 18px;cursor:pointer;color:#fff}
+.pri{flex:1;background:var(--grad);box-shadow:0 14px 26px -10px #F54768}.sec{background:rgba(255,255,255,.1);border:1px solid var(--line)}
+button:disabled{opacity:.55;cursor:not-allowed}
+.chk{list-style:none;margin:0 0 6px;padding:0}.chk li{display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-bottom:1px solid var(--line)}.chk li:last-child{border:0}
+.ic{flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:14px;background:rgba(255,255,255,.12)}
+.ok .ic{background:#5be3a833;color:var(--ok)}.warn .ic{background:#ffc46b33;color:var(--warn)}.bad .ic{background:#ff8fa333;color:var(--bad)}
+.chk b{display:block;font-size:14.5px}.chk small{color:var(--mut);font-size:13px}
+.note{border-radius:14px;padding:12px 14px;font-size:13.5px;margin-top:12px;background:rgba(255,196,107,.12);border:1px solid #ffc46b55;color:#ffe2b3}
+.err{color:var(--bad);font-size:13.5px;min-height:1.3em;margin-top:12px;text-align:center}
+.opt{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:16px;padding:14px;margin-top:10px;cursor:pointer;background:rgba(0,0,0,.14)}
+.opt input{margin-top:4px;accent-color:#F54768;width:18px;height:18px}.opt b{display:block}.opt span{font-size:13px;color:var(--mut)}
+.opt.sel{border-color:#FF9677;background:rgba(255,150,119,.1)}
+.str{height:6px;border-radius:9px;background:rgba(255,255,255,.14);margin-top:8px;overflow:hidden}.str i{display:block;height:100%;width:0;background:var(--bad);transition:.3s}
+.sum{margin:0;padding:0;list-style:none}.sum li{display:flex;justify-content:space-between;gap:14px;padding:9px 0;border-bottom:1px solid var(--line);font-size:14.5px}.sum li span:first-child{color:var(--mut)}.sum li b{text-align:right;overflow-wrap:anywhere}
+.spin{width:54px;height:54px;border-radius:50%;border:5px solid rgba(255,255,255,.18);border-top-color:#FF9677;margin:20px auto;animation:sp 1s linear infinite}@keyframes sp{to{transform:rotate(360deg)}}
+.big{font-size:54px;text-align:center}.center{text-align:center}
+.link{background:none;padding:0;color:#FF9677;font-size:13.5px;text-decoration:underline;font-weight:600}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+ <div class="top"><img src="/logo.png" alt="Vefa Auto"></div>
+ <div class="dots" id="dots" aria-hidden="true"></div>
+ <form class="card" id="f" autocomplete="off" novalidate>
+
+  <section class="step on" data-s="0">
+   <h1>Kuruluma hoş geldiniz</h1>
+   <p>Birkaç adımda galeri uygulamanız hazır olacak. Yaklaşık 2 dakika sürer.</p>
+   <ul class="chk">
+    <li class="ok"><span class="ic">1</span><div><b>Sistem kontrolü</b><small>Sunucunuzun uygun olup olmadığına bakarız.</small></div></li>
+    <li class="ok"><span class="ic">2</span><div><b>İşletme bilgileri</b><small>Makbuz ve raporlarda görünecek ad, telefon, adres.</small></div></li>
+    <li class="ok"><span class="ic">3</span><div><b>Yönetici hesabı</b><small>Her cihazdan bu hesapla giriş yapacaksınız.</small></div></li>
+    <li class="ok"><span class="ic">4</span><div><b>Başlangıç verisi</b><small>Boş başlayın, örnek verilerle gezin ya da eski yedeğinizi yükleyin.</small></div></li>
+   </ul>
+   <div class="btns"><button type="button" class="pri" data-next>Başlayalım</button></div>
+  </section>
+
+  <section class="step" data-s="1">
+   <h1>Sistem kontrolü</h1>
+   <p>Sunucunuz kontrol ediliyor.</p>
+   <ul class="chk" id="checks"><li><span class="ic">…</span><div><b>Kontrol ediliyor</b></div></li></ul>
+   <div class="note" id="warnNote" hidden><label style="display:flex;gap:10px;align-items:flex-start;margin:0;color:inherit;font-weight:600;cursor:pointer"><input type="checkbox" id="warnOk" style="margin-top:3px;accent-color:#F54768"><span>Uyarıları okudum, yine de devam etmek istiyorum.</span></label></div>
+   <div class="err" id="chkErr"></div>
+   <div class="center" style="margin-top:6px"><button type="button" class="link" id="recheck">Yeniden kontrol et</button></div>
+   <div class="btns"><button type="button" class="sec" data-back>Geri</button><button type="button" class="pri" data-next id="chkNext" disabled>Devam</button></div>
+  </section>
+
+  <section class="step" data-s="2">
+   <h1>İşletme bilgileri</h1>
+   <p>Makbuz, rapor ve sözleşmelerde görünür. Sonradan Ayarlar’dan değiştirebilirsiniz.</p>
+   <label for="fad">Galeri adı *</label><input type="text" id="fad" placeholder="Örn. Vefa Auto" maxlength="80" autocomplete="organization">
+   <div class="row2"><div><label for="ftel">Telefon</label><input type="tel" id="ftel" placeholder="05xx xxx xx xx" maxlength="30" inputmode="tel"></div><div><label for="fvn">Vergi no / TCKN</label><input type="text" id="fvn" maxlength="20" inputmode="numeric"></div></div>
+   <label for="fvd">Vergi dairesi</label><input type="text" id="fvd" maxlength="60">
+   <label for="fadr">Adres</label><input type="text" id="fadr" maxlength="200" autocomplete="street-address">
+   <div class="err" id="e2"></div>
+   <div class="btns"><button type="button" class="sec" data-back>Geri</button><button type="button" class="pri" data-next>Devam</button></div>
+  </section>
+
+  <section class="step" data-s="3">
+   <h1>Yönetici hesabı</h1>
+   <p>Bu hesapla tüm verilere ulaşırsınız. Şifrenizi unutmamak için bir yere not edin.</p>
+   <label for="usr">Kullanıcı adı *</label><input type="text" id="usr" placeholder="Örn. yonetici" maxlength="32" autocapitalize="none" autocomplete="username">
+   <label for="pw1">Şifre * <span style="font-weight:500">(en az 6 karakter)</span></label><input type="password" id="pw1" autocomplete="new-password">
+   <div class="str"><i id="str"></i></div>
+   <label for="pw2">Şifre (tekrar) *</label><input type="password" id="pw2" autocomplete="new-password">
+   <label style="display:flex;gap:8px;align-items:center;font-weight:500;cursor:pointer"><input type="checkbox" id="show" style="accent-color:#F54768"> Şifreyi göster</label>
+   <label for="code">Kurulum kodu *</label><input type="text" id="code" placeholder="XXXX-XXXX" maxlength="12" autocapitalize="characters" spellcheck="false" style="letter-spacing:.14em;text-transform:uppercase">
+   <p style="margin-top:8px;font-size:13px">Kod, siteyi başka birinin ele geçirmesini önler. <b>Hosting panelinizde “Logs / Günlükler” bölümünde</b> “KURULUM KODU” satırında yazar. Kendiniz <code>SETUP_CODE</code> ayarladıysanız onu girin.</p>
+   <div class="err" id="e3"></div>
+   <div class="btns"><button type="button" class="sec" data-back>Geri</button><button type="button" class="pri" data-next>Devam</button></div>
+  </section>
+
+  <section class="step" data-s="4">
+   <h1>Başlangıç verisi</h1>
+   <p>Nasıl başlamak istersiniz?</p>
+   <label class="opt sel"><input type="radio" name="mod" value="bos" checked><div><b>Boş başla</b><span>Gerçek kullanıma hazır, temiz defter.</span></div></label>
+   <label class="opt"><input type="radio" name="mod" value="ornek"><div><b>Örnek verilerle gez</b><span>Uygulamayı denemek için kurgusal araçlar ve müşteriler yüklenir. İstediğiniz an tek tıkla silebilirsiniz.</span></div></label>
+   <label class="opt"><input type="radio" name="mod" value="yedek"><div><b>Eski yedekten geri yükle</b><span>Daha önce aldığınız yedek dosyasını (.json) seçin. Tüm kayıtlar ve fotoğraflar taşınır.</span></div></label>
+   <div id="rest" hidden style="margin-top:12px"><input type="file" id="rfile" accept=".json,application/json" style="color:var(--mut);font-size:14px"><div id="rinfo" class="note" hidden style="background:rgba(91,227,168,.1);border-color:#5be3a855;color:#bff5dd"></div></div>
+   <div class="err" id="e4"></div>
+   <div class="btns"><button type="button" class="sec" data-back>Geri</button><button type="button" class="pri" data-next>Devam</button></div>
+  </section>
+
+  <section class="step" data-s="5">
+   <h1>Her şey hazır mı?</h1>
+   <p>Bilgilerinizi kontrol edin, sonra kurulumu tamamlayın.</p>
+   <ul class="sum" id="sum"></ul>
+   <div class="err" id="e5"></div>
+   <div class="btns"><button type="button" class="sec" data-back id="b5">Geri</button><button type="button" class="pri" id="go">Kurulumu tamamla</button></div>
+  </section>
+
+  <section class="step" data-s="6">
+   <div class="spin" aria-hidden="true"></div><h1 class="center">Kuruluyor…</h1><p class="center">Veritabanı hazırlanıyor.</p>
+  </section>
+
+  <section class="step" data-s="7">
+   <div class="big" aria-hidden="true">🎉</div><h1 class="center">Kurulum tamamlandı</h1>
+   <p class="center">Uygulama birazdan açılacak. Telefonda “Ana ekrana ekle” ile uygulama gibi kullanabilirsiniz.</p>
+   <div class="btns"><button type="button" class="pri" id="open">Uygulamayı aç</button></div>
+  </section>
+ </form>
+</div>
+<script>
+(function(){
+'use strict';
+var $=function(s,r){return(r||document).querySelector(s)},$$=function(s,r){return[].slice.call((r||document).querySelectorAll(s))};
+var cur=0,N=6,restore=null,hasWarn=false,hasBad=false;
+var dots=$('#dots');for(var i=0;i<N;i++)dots.appendChild(document.createElement('i'));
+function show(n){cur=n;$$('.step').forEach(function(s){s.classList.toggle('on',+s.dataset.s===n)});$$('i',dots).forEach(function(d,i){d.className=i===n?'on':i<n?'done':''});window.scrollTo(0,0);
+  var f=$('.step.on input:not([type=hidden]):not([type=file]):not([type=radio]):not([type=checkbox])');if(f&&n>1&&n<6)setTimeout(function(){f.focus()},120);if(n===1)check();if(n===5)summary()}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function val(id){return $('#'+id).value.trim()}
+/* kontrol */
+function check(){
+  var ul=$('#checks');ul.innerHTML='<li><span class="ic">…</span><div><b>Kontrol ediliyor</b></div></li>';$('#chkNext').disabled=true;$('#chkErr').textContent='';$('#warnNote').hidden=true;
+  fetch('/api/setup/check').then(function(r){return r.json().then(function(j){return{ok:r.ok,j:j}})}).then(function(r){
+    if(!r.ok){$('#chkErr').textContent=r.j.error||'Kontrol yapılamadı';return}
+    var list=r.j.checks.slice();
+    list.push({ad:'Tarayıcı depolaması',durum:storageOk()?'ok':'warn',not:storageOk()?'Kullanılabilir':'Kapalı görünüyor (gizli sekme?). Giriş bilgisi hatırlanmayabilir.'});
+    var sc=location.protocol==='https:'||/^(localhost|127\.|192\.168\.|10\.)/.test(location.hostname);
+    if(!list.some(function(x){return x.id==='https'&&x.durum==='warn'})&&!sc)list.push({ad:'Güvenli bağlantı (HTTPS)',durum:'warn',not:'Adres HTTP ile açılmış. İnternete açık kullanımda HTTPS şart.'});
+    hasWarn=list.some(function(x){return x.durum==='warn'});hasBad=list.some(function(x){return x.durum==='bad'});
+    ul.innerHTML=list.map(function(x){return'<li class="'+x.durum+'"><span class="ic">'+(x.durum==='ok'?'✓':x.durum==='warn'?'!':'✕')+'</span><div><b>'+esc(x.ad)+'</b><small>'+esc(x.not||'')+'</small></div></li>'}).join('');
+    $('#warnNote').hidden=!hasWarn||hasBad;$('#warnOk').checked=false;sync1();
+    if(hasBad)$('#chkErr').textContent='Devam edilemiyor: kırmızı maddeleri giderip “Yeniden kontrol et”e basın.';
+  }).catch(function(){$('#chkErr').textContent='Sunucuya ulaşılamadı. Sayfayı yenileyin.'});
+}
+function storageOk(){try{localStorage.setItem('_t','1');localStorage.removeItem('_t');return true}catch(e){return false}}
+function sync1(){$('#chkNext').disabled=hasBad||(hasWarn&&!$('#warnOk').checked)}
+$('#warnOk').addEventListener('change',sync1);$('#recheck').addEventListener('click',check);
+/* şifre gücü */
+$('#pw1').addEventListener('input',function(){var p=this.value,s=0;if(p.length>=6)s++;if(p.length>=10)s++;if(/[A-Z]/.test(p)&&/[a-z]/.test(p))s++;if(/\d/.test(p)&&/[^\w]/.test(p))s++;var b=$('#str');b.style.width=(p?(s+1)*20:0)+'%';b.style.background=s<=1?'#ff8fa3':s===2?'#ffc46b':'#5be3a8'});
+$('#show').addEventListener('change',function(){$('#pw1').type=$('#pw2').type=this.checked?'text':'password'});
+/* mod */
+$$('input[name=mod]').forEach(function(r){r.addEventListener('change',function(){$$('.opt').forEach(function(o){o.classList.toggle('sel',o.querySelector('input').checked)});$('#rest').hidden=this.value!=='yedek'||!this.checked;$('#e4').textContent=''})});
+$('#rfile').addEventListener('change',function(){var f=this.files[0];restore=null;$('#rinfo').hidden=true;if(!f)return;var fr=new FileReader();
+  fr.onload=function(){try{var j=JSON.parse(fr.result),d=j.db||j;if(!d||!Array.isArray(d.vehicles)||!Array.isArray(d.contacts))throw 0;restore={db:d,photos:j.photos||null};
+    $('#rinfo').hidden=false;$('#rinfo').textContent='Yedek okundu: '+d.vehicles.length+' araç, '+d.contacts.length+' cari, '+(d.sales||[]).length+' satış, '+(d.inst||[]).length+' taksit/senet.';$('#e4').textContent=''}catch(e){$('#e4').textContent='Bu dosya geçerli bir yedek değil.'}};fr.readAsText(f)});
+function mod(){return($('input[name=mod]:checked')||{}).value}
+/* doğrulama */
+function validate(n){
+  var e;
+  if(n===2){e=$('#e2');e.textContent='';if(!val('fad')){e.textContent='Galeri adını yazın.';return false}}
+  if(n===3){e=$('#e3');e.textContent='';
+    if(!/^[A-Za-z0-9ÇĞİÖŞÜçğıöşü._-]{3,32}$/.test(val('usr'))){e.textContent='Kullanıcı adı 3-32 karakter olmalı (harf, rakam, . _ -).';return false}
+    if($('#pw1').value.length<6){e.textContent='Şifre en az 6 karakter olmalı.';return false}
+    if($('#pw1').value!==$('#pw2').value){e.textContent='Şifreler aynı değil.';return false}
+    if(val('code').length<4){e.textContent='Kurulum kodunu yazın (hosting günlüğünde).';return false}}
+  if(n===4){e=$('#e4');e.textContent='';if(mod()==='yedek'&&!restore){e.textContent='Bir yedek dosyası seçin.';return false}}
+  return true}
+function summary(){var m=mod();var rows=[['Galeri',val('fad')],['Telefon',val('ftel')||'—'],['Yönetici',val('usr')],['Şifre','•'.repeat(Math.min(10,$('#pw1').value.length))],['Başlangıç',m==='bos'?'Boş defter':m==='ornek'?'Örnek verilerle':'Yedekten geri yükle']];
+  $('#sum').innerHTML=rows.map(function(r){return'<li><span>'+r[0]+'</span><b>'+esc(r[1])+'</b></li>'}).join('')}
+$$('[data-next]').forEach(function(b){b.addEventListener('click',function(){if(validate(cur))show(cur+1)})});
+$$('[data-back]').forEach(function(b){b.addEventListener('click',function(){show(cur-1)})});
+$('#f').addEventListener('keydown',function(e){if(e.key==='Enter'&&e.target.tagName==='INPUT'&&e.target.type!=='file'){e.preventDefault();var nx=$('.step.on [data-next]');if(nx&&!nx.disabled)nx.click();else if(cur===5)$('#go').click()}});
+/* kurulum */
+$('#go').addEventListener('click',function(){
+  var btn=this;btn.disabled=true;$('#b5').disabled=true;$('#e5').textContent='';show(6);
+  var body={code:val('code'),username:val('usr'),password:$('#pw1').value,mod:mod()==='yedek'?'yedek':mod(),firma:{ad:val('fad'),tel:val('ftel'),vergiNo:val('fvn'),vergiDairesi:val('fvd'),adres:val('fadr')}};
+  if(mod()==='yedek')body.restore=restore;
+  fetch('/api/setup',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}).then(function(r){return r.json().then(function(j){return{ok:r.ok,j:j}})}).then(function(r){
+    if(!r.ok){show(5);btn.disabled=false;$('#b5').disabled=false;$('#e5').textContent=r.j.error||'Kurulum başarısız';
+      if(/kod/i.test(r.j.error||'')){$('#e3').textContent=r.j.error;show(3)}return}
+    try{localStorage.setItem('vefa-token',r.j.token)}catch(e){}
+    show(7);setTimeout(function(){location.replace('/')},2800);
+  }).catch(function(){show(5);btn.disabled=false;$('#b5').disabled=false;$('#e5').textContent='Sunucuya ulaşılamadı. Tekrar deneyin.'});
+});
+$('#open').addEventListener('click',function(){location.replace('/')});
+})();
+</script>
+</body>
+</html>

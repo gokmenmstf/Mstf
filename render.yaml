@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: vefa-auto
+    runtime: docker
+    plan: starter
+    disk:
+      name: vefa-data
+      mountPath: /data
+      sizeGB: 1
+    healthCheckPath: /healthz
+    envVars:
+      - key: DATA_DIR
+        value: /data
+      - key: SETUP_CODE
+        generateValue: true
